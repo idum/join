@@ -1,0 +1,41 @@
+header {
+    position: sticky;
+    top: 0;
+    background-color: rgb(243, 233, 233);
+    height: 4vw;
+    display: flex; 
+    align-items: center;
+    
+   
+    
+    > div {
+        flex: 1;
+        padding: 1vw;
+        
+    }
+
+    .right {      
+        font-size: 2vw;
+    }
+
+
+    .logo {        
+        
+        text-align:left;
+        font-size: 3.5vw;
+    }
+
+    .left {
+        display: flex;
+        align-items: center;
+       
+        > div {
+            flex: 1;
+            text-align: end;
+            padding: 0.5vw;            
+            font-size: 1.5vw;
+        }     
+        
+    }
+}
+

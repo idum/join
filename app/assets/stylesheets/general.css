@@ -1,0 +1,25 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.mobile {
+    @media screen and (min-width:600px) {
+        visibility: hidden;
+        clear: both;
+        float: left;
+        display: none;
+        
+    }
+}
+
+.desktop {
+    @media screen and (max-width:600px) {
+        visibility: hidden;
+        clear: both;
+        float: left;
+        display: none;
+        
+    }
+}
