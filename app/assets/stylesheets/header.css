@@ -44,12 +44,16 @@ header {
         .btn-search {         
             padding: 0 1em;
         }
-    
-    }   
-    .user-btn {
+    }
+    .sign {
         padding: 0 1em;
     }
 
+    .btn {
+        padding: 0 1em;
+        align-items: stretch;
+        text-decoration: none;
 
+    }
 
 }

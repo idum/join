@@ -7,6 +7,12 @@
         SEARCH
     </div>
 </div>
-<div class="profbtn">
-    <i class="fa-solid fa-user user-btn"></i>
-</div>
+<% if !authenticated? %>
+    <%= link_to "Login", new_session_path, class: "btn" %>
+    <%= link_to "Sign In", signup_path, class: "btn" %>
+<% else%>
+    <%= button_to "Logout", session_path, method: "delete", class: "btn" %>
+    <div class="profbtn">
+        <i class="fa-solid fa-user user-btn"></i>
+    </div>
+<% end %>
