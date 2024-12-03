@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :events
   get "registrations/new"
   get "registrations/create"
   get "registrations/delete"

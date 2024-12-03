@@ -12,10 +12,12 @@
     <%= link_to "Sign In", signup_path, class: "btn" %>
 <% else%>
     <%= link_to "Logout", session_path, data: { turbo_method: :delete } , class: "btn" %>
-    <div class="dwuser">
-        <i class="fa-solid fa-user user-btn"></i>
-        <div class="dwcontent">
-            <%= User.find(Current.session[:user_id]).email_address %>
-        </div>
+    
+    <div class="user-btn">
+        <i class="fa-solid fa-user"></i>
     </div>
+    <div class="dwcontent">
+        <%= User.find(Current.session[:user_id]).email_address %>
+    </div>
+    
 <% end %>
