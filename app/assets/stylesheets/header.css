@@ -2,14 +2,12 @@ header {
     position: sticky;
     top: 0;
     background-color:rgb(89, 89, 165);
-    height: 40px;
+    height: 4em;
     display: flex;
     justify-content: end;
     align-items: center;
     flex: 1;
-    padding: 0.1em;
     
-
     .logo {
         position: absolute;
         left: 0;
@@ -19,7 +17,7 @@ header {
 
     .search {
         width: 20em;
-        height: 4vh;
+        height: 2em;
         border-radius: 50px;
         border: 1px solid #dcdcdc;
         outline-color: none;
@@ -62,7 +60,11 @@ header {
         position: absolute;
         background-color: #9d8c8c;
         font-size: large;
+        padding: 0 1em;
          
+    }
+    .user-btn {
+        padding: 0 1em;
     }
     
     .user-btn:hover + .dwcontent{
