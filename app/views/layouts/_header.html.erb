@@ -17,7 +17,7 @@
         <i class="fa-solid fa-user"></i>
     </div>
     <div class="dwcontent">
-        <%= User.find(Current.session[:user_id]).email_address %>
+        <%= Current.user.email_address %>
     </div>
     
 <% end %>

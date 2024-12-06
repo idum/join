@@ -10,8 +10,17 @@
   </p>
 
   <p>
-    <strong>Location:</strong>
-    <%= event.location %>
+    <strong>Address:</strong>
+    <%= event.address %>
   </p>
 
+  <p>
+    <strong>Date:</strong>
+    <%= event.date %>
+  </p>
+
+  <p>
+    <strong>Created by:</strong>
+    <%= event.user.email_address %>
+  </p>
 </div>

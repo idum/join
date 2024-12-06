@@ -22,9 +22,14 @@
   </div>
 
   <div>
-    <%= form.label :location, style: "display: block" %>
-    <%= form.textarea :location %>
+    <%= form.label :address, style: "display: block" %>
+    <%= form.textarea :address %>
   </div>
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
+  </div>
+
 
   <div>
     <%= form.submit %>

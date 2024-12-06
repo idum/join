@@ -24,13 +24,23 @@
 
   <body>
     <header>
-      <%= render "home/header" %>
+      <%= render "layouts/header" %>
     </header>
-   
-      <%= yield %>
-    
+    <div class="main-container">
+      <div class="operation-column">
+        <%= render "layouts/operation" %>
+      </div>
+      <div class="main-column">
+        <%= yield %>
+      </div>
+      <div class="messenger-column">
+        <%= render "layouts/messenger"%>
+      </div>
+    </div>
     <footer>
-      <%= render "home/footer" %>
+      <%= render "layouts/footer" %>
     </footer>
   </body>
 </html>
+
+
