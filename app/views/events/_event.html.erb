@@ -23,4 +23,12 @@
     <strong>Created by:</strong>
     <%= event.user.email_address %>
   </p>
+
+  <p>
+    <% if event.is_following? %>
+      <strong> Event Followed </strong>
+    <% else %>
+      <strong> Event not Followed </strong>
+    <% end%>
+  </p>
 </div>

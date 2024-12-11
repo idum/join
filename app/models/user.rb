@@ -2,7 +2,8 @@ class User < ApplicationRecord
   has_secure_password
   has_many :sessions, dependent: :destroy
   has_many :events
-  has_many :noted_events
+  has_many :noted_events, dependent: :destroy
+
 
   normalizes :email_address, with: ->(e) { e.strip.downcase }
 end

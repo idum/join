@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2024_12_06_144029) do
+ActiveRecord::Schema[8.1].define(version: 2024_12_10_152353) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -24,11 +24,12 @@ ActiveRecord::Schema[8.1].define(version: 2024_12_06_144029) do
   end
 
   create_table "noted_events", force: :cascade do |t|
-    t.bigint "users_id"
-    t.bigint "events_id"
     t.boolean "registered", default: false
-    t.index ["events_id"], name: "index_noted_events_on_events_id"
-    t.index ["users_id"], name: "index_noted_events_on_users_id"
+    t.bigint "user_id", null: false
+    t.bigint "event_id", null: false
+    t.index ["event_id"], name: "index_noted_events_on_event_id"
+    t.index ["user_id", "event_id"], name: "index_noted_events_on_user_id_and_event_id", unique: true
+    t.index ["user_id"], name: "index_noted_events_on_user_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -49,5 +50,7 @@ ActiveRecord::Schema[8.1].define(version: 2024_12_06_144029) do
   end
 
   add_foreign_key "events", "users"
+  add_foreign_key "noted_events", "events"
+  add_foreign_key "noted_events", "users"
   add_foreign_key "sessions", "users"
 end

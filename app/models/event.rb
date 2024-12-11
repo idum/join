@@ -10,9 +10,19 @@ class Event < ApplicationRecord
   # user -> reference to user; the creator of the event
   # interested_users -> cross table with user; user that follow the event
   belongs_to :user
-  has_many :noted_events
+  has_many :noted_events, dependent: :destroy
 
-  def interested_users
-    self.noted_events.users
+  # interested_user queue the list of users that follow the event. May be substituted by a scope call
+  has_many :interested_users, through: :noted_events, source: :user
+
+  # boolean flag to check if an user (default = Current User), follow an event
+  def is_following?(user = Current.user)
+    self.noted_events.find_by(user: user)
+  end
+
+  # mark as followed or unfollowed the event for an user (default Current User)
+  def follow(user = Current.user, check = self.is_following?(user))
+    check ? self.noted_events.create(user: user) : self.noted_events.find_by(user: user).destroy
+    self.is_following?(user)? 1:0
   end
 end
