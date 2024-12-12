@@ -1,3 +1,23 @@
-<div class="nextevent">
-    
-</li>
+<div class="eventscreen">
+    <div class="searchbar" id="searchbar">
+        qui c'è la barra di ricerca se non è sulla barra header 
+    </div>
+    <div class="event">
+        qui ci sono i prossimi 3 eventi memorizzati
+    </div>
+    <div class="openit">
+        se clicchi su uno si apre la schermata per farlo vedere
+    </div>
+    <!-- il contatore qui sotto è per procedere gli eventi e le notizie stile facebook, adesso per prova messo quello -->
+    <% (1..3).each do |e| %>
+        <div class="event">
+            prossimi eventi, la struttura è uguale a sopra, quindi può darsi 
+            le due parti siano messe insieme.
+        </div>
+        <div class="openit">
+            anche qui quando clicchi si apre la box
+        </div>
+    <% end %>
+</div>
+
+
