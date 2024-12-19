@@ -2,23 +2,48 @@
     <div class="searchbar" id="searchbar">
         qui c'è la barra di ricerca se non è sulla barra header 
     </div>
-    <details>
-        <summary>
-            qui ci sono i prossimi 3 eventi memorizzati
-        </summary>
-        <div>
-          se clicchi su uno si apre la schermata per farlo vedere
-        </div>
-    </details>
-    <!-- il contatore qui sotto è per procedere gli eventi e le notizie stile facebook, adesso per prova messo quello -->
-    <% (1..3).each do |e| %>
-        <details>
-            prossimi eventi, la struttura è uguale a sopra, quindi può darsi 
-            le due parti siano messe insieme.
+    <% Current.user.following_events.each do |e|%>
+        <details class="box">
+            <summary>
+                <div class="event">
+                    <div>Evento: <%= e.name%></div>         
+                    <div><%= e.address%></div>
+                    <div><%= e.date%></div>
+                    <div><% if e.is_following?%>
+                        Segui
+                        <% else%>
+                        Non Segui
+                        <%end%>
+                    </div>              
+                </div>    
+            </summary>
+            <div>
+                <%= e.descr %>
+            </div>
+        </details>
         
-        <summary>
-            anche qui quando clicchi si apre la box
-        </summary>
+    <% end %>
+    <!-- il contatore qui sotto è per procedere gli eventi e le notizie stile facebook, adesso per prova messo quello -->
+    <% Event.allevents.each do |e| %>
+        <details class="box">
+            <summary>
+                <table>
+                    <tr>
+                        <th><%= e.name%></th>
+                        <div><%= e.address%></div>
+                        <div><%= e.date%></div>
+                        <div><% if e.is_following?%>
+                            Segui
+                            <% else%>
+                            Non Segui
+                            <%end%>
+                        </div>
+                    </tr>
+                </table>
+            </summary>
+            <div>
+                <%= e.descr %>
+            </div>
         </details>
     <% end %>
 </div>

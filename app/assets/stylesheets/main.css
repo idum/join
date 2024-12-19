@@ -21,26 +21,34 @@
 .eventscreen {
     display: flex;
     flex-direction: column;
-    width: max-content;
     width: 100%;
+    margin: 1em;
+    padding: 1em;
+    gap: 1em;
 
-    details {
-        border-style: solid;
-        border-width: 4px;
-        padding: 1em;
-        margin: 1em;
-        font-size: x-large;
+    details {  
+        justify-self: center;  
     }
-
+    
+   
     summary {
-        font-style: italic;
+        display: inline;
+        .event {
+            display:grid;
+            grid-template-columns: 3fr, 2fr, 1fr,1fr;
+            font-style: italic;
+            div {
+                align-items: center;
+            }
+        }
     }
+
     details[open] {
         padding: 0.5em;
     }
       
     details[open] summary {
-        border-bottom: 1px solid #aaa;
+        border-bottom: 1px solid #733030;
         margin-bottom: 0.5em;
     }
       

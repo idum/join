@@ -23,3 +23,12 @@ html, body {
         
     }
 }
+
+.box {
+    border-radius: 5px;
+    border-style: inset;
+    border-width: 2px;
+    padding: 0.5em;
+    background-color: darkgrey;
+}
+

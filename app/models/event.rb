@@ -15,6 +15,10 @@ class Event < ApplicationRecord
   # attr_accessible :follow
   before_save :set_follow
 
+  def self.allevents
+    Event.all.sort_by(&:date)
+  end
+
   def set_follow
     follow ?
       (self.noted_events.create(user: Current.user) if !self.is_following?)
